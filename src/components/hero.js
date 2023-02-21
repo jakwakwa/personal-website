@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import * as React from "react"
 import {
   Box,
@@ -13,18 +13,17 @@ import {
   Text,
 } from "./ui"
 
+import BrandLogoOne from "./brand-logo.1"
+
 export default function Hero(props) {
   return (
     <Section>
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half">
-            {props.image && (
-              <GatsbyImage
-                alt={props.image.alt}
-                image={getImage(props.image.gatsbyImageData)}
-              />
-            )}
+
+            <BrandLogoOne />
+
           </Box>
           <Box width="half">
             <Heading as="h1">
