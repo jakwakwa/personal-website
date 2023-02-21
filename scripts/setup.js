@@ -56,7 +56,7 @@ inquirer
       spaceId,
       managementToken,
       accessToken,
-      // previewToken
+      previewToken
     }) => {
       const {
         CONTENTFUL_SPACE_ID,
