@@ -11,10 +11,11 @@ import {
   InteractiveIcon,
   Nudge,
   VisuallyHidden,
+
 } from "./ui"
 import {
   mobileNavOverlay,
-  mobileNavLink,
+
   desktopHeaderNavWrapper,
   mobileHeaderNavWrapper,
   mobileNavSVGColorWrapper,
@@ -23,42 +24,6 @@ import {
 import BrandLogo from "./brand-logo"
 
 export default function Header() {
-  const data = useStaticQuery(graphql`
-    query {
-      layout {
-        header {
-          id
-          navItems {
-            id
-            navItemType
-            ... on NavItem {
-              href
-              text
-            }
-            ... on NavItemGroup {
-              name
-              navItems {
-                id
-                href
-                text
-                description
-                icon {
-                  alt
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-          cta {
-            id
-            href
-            text
-          }
-        }
-      }
-    }
-  `)
-
 
   const [isOpen, setOpen] = React.useState(false)
 
@@ -80,20 +45,18 @@ export default function Header() {
             <BrandLogo />
           </NavLink>
           <nav>
-            <FlexList gap={4}>
+            <FlexList gap={"10px"}>
+              <li>
+
+              <NavLink to="/about">About</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/about">About</NavLink>
 
 
-                  <li>
-
-                      <NavLink to={"/#"}>{"Home"}</NavLink>
-                      <NavLink to={"/#"}>{"About"}</NavLink>
-                      <NavLink to={"/#"}>{"Projects"}</NavLink>
-
-                  </li>
-
+              </li>
             </FlexList>
           </nav>
-          <div><Button to={"/"}>{"cta"}</Button></div>
+          <div> <Button to={"/"}>{"Contact me"}</Button></div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -112,12 +75,14 @@ export default function Header() {
           <Flex>
             <Space />
             <div>
-              {/* {cta && (
-                <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
-                  {cta.text}
+
+                <Button
+
+                  to={"/"}
+                >
+                  {"contact me"}
                 </Button>
-              )} */}
-              <Button to="/contact" variant={isOpen ? "reversed" : "primary"}> Contact </Button>
+
             </div>
             <Nudge right={3}>
               <InteractiveIcon
@@ -137,19 +102,6 @@ export default function Header() {
         <div className={mobileNavOverlay}>
           <nav>
             <FlexList responsive variant="stretch">
-
-                  <li>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"Home"}
-                    </NavLink>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"About"}
-                    </NavLink>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"Projects"}
-                    </NavLink>
-
-                    </li>
 
             </FlexList>
           </nav>
