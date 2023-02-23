@@ -426,7 +426,7 @@ export const navlink = style({
   transitionDuration: "0.2s",
   transitionTimingFunction: "ease-in-out",
   ":hover": {
-    color: theme.colors.active,
+    color: theme.colors.black,
   },
 })
 
@@ -480,10 +480,11 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   primary: [
     button,
     {
-      color: theme.colors.text,
-      backgroundColor: theme.colors.muted,
+      color: theme.colors.primary,
+      backgroundColor: theme.colors.black,
       ":hover": {
-        backgroundColor: theme.colors.black,
+        backgroundColor: theme.colors.primary,
+        color: theme.colors.background,
       },
       ":focus": {
         backgroundColor: theme.colors.active,

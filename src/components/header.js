@@ -21,6 +21,7 @@ import {
 } from "./header.css"
 
 import BrandLogo from "./brand-logo"
+import Logo from "../../docs/images/pp-sq-logo.jpg"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -77,19 +78,20 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
+            {/* <BrandLogo /> */}
+            <img style={{ borderRadius: "50%", width: "70px"}} src={Logo} alt="logo" />
           </NavLink>
           <nav>
             <FlexList gap={4}>
 
 
-                  <li>
 
-                      <NavLink to={"/#"}>{"Home"}</NavLink>
+
+                      <NavLink to={"/"}>{"Home"}</NavLink>
                       <NavLink to={"/about"}>{"About"}</NavLink>
                       <NavLink to={"/#projects"}>{"Projects"}</NavLink>
 
-                  </li>
+
 
             </FlexList>
           </nav>
@@ -106,7 +108,8 @@ export default function Header() {
           >
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
-              <BrandLogo />
+              {/* <BrandLogo /> */}
+
             </NavLink>
           </span>
           <Flex>
