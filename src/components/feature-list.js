@@ -27,7 +27,7 @@ export const query = graphql`
     id
     kicker
     heading
-    techstack
+
     text
     content {
       id
