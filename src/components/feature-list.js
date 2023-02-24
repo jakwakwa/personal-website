@@ -27,7 +27,6 @@ export const query = graphql`
     id
     kicker
     heading
-
     text
     content {
       id

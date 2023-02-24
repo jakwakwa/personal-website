@@ -254,6 +254,7 @@ export type TextVariants =
   | "subhead"
   | "subheadSmall"
   | "kicker"
+  | "techstack"
   | "caps"
   | "stat"
   | "statLabel"
@@ -341,6 +342,19 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[2],
+      fontFamily: theme.fonts.mono,
+      fontSize: theme.fontSizes[1],
+      fontWeight: theme.fontWeights.medium,
+      lineHeight: theme.lineHeights.tight,
+      letterSpacing: theme.letterSpacings.wide,
+      textTransform: "uppercase",
+    },
+  ],
+  techstack: [
+    margin0,
+    {
+      marginBottom: theme.space[2],
+      color: theme.colors.teal,
       fontFamily: theme.fonts.mono,
       fontSize: theme.fontSizes[1],
       fontWeight: theme.fontWeights.medium,

@@ -140,6 +140,10 @@ export function Kicker({ ...props }) {
   return <Text variant="kicker" {...props} />
 }
 
+export function Techstack({ ...props }) {
+  return <Text variant="techstack" {...props} />
+}
+
 export function Link({ to, href, ...props }) {
   const url = href || to || ""
   if (isAbsoluteURL(url)) {

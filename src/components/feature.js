@@ -10,6 +10,7 @@ import {
   Kicker,
   Text,
   ButtonList,
+  Techstack,
 } from "./ui"
 
 export default function Feature(props) {
@@ -30,6 +31,9 @@ export default function Feature(props) {
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.heading}
             </Subhead>
+            <Subhead>
+              {props.techstack && <Techstack>{props.techstack}</Techstack>}
+            </Subhead>
 
             <Text variant="lead">{props.text}</Text>
             <ButtonList links={props.links} />
@@ -45,6 +49,7 @@ export const query = graphql`
     id
     kicker
     heading
+    techstack
     text
     links {
       id
