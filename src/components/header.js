@@ -20,8 +20,8 @@ import {
   mobileNavSVGColorWrapper,
 } from "./header.css"
 
-import BrandLogo from "./brand-logo"
-import Logo from "../../docs/images/pp-sq-logo.jpg"
+import MyLogo from "./my-logo"
+import Logo from "../../docs/images/my-logo-v3.png"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -60,7 +60,6 @@ export default function Header() {
     }
   `)
 
-
   const [isOpen, setOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -78,24 +77,19 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            {/* <BrandLogo /> */}
-            <img style={{ borderRadius: "50%", width: "70px"}} src={Logo} alt="logo" />
+            {/* <MyLogo /> */}
+            <img style={{ width: "300px" }} src={Logo} alt="logo" />
           </NavLink>
           <nav>
             <FlexList gap={4}>
-
-
-
-
-                      <NavLink to={"/"}>{"Home"}</NavLink>
-                      <NavLink to={"/about"}>{"About"}</NavLink>
-                      <NavLink to={"/#projects"}>{"Projects"}</NavLink>
-
-
-
+              <NavLink to={"/"}>{"Home"}</NavLink>
+              <NavLink to={"/about"}>{"About"}</NavLink>
+              <NavLink to={"/#projects"}>{"Projects"}</NavLink>
             </FlexList>
           </nav>
-          <div><Button to={"/"}>{"cta"}</Button></div>
+          <div>
+            <Button to={"/"}>{"cta"}</Button>
+          </div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -109,7 +103,6 @@ export default function Header() {
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
               {/* <BrandLogo /> */}
-
             </NavLink>
           </span>
           <Flex>
@@ -120,7 +113,10 @@ export default function Header() {
                   {cta.text}
                 </Button>
               )} */}
-              <Button to="/contact" variant={isOpen ? "reversed" : "primary"}> Contact </Button>
+              <Button to="/contact" variant={isOpen ? "reversed" : "primary"}>
+                {" "}
+                Contact{" "}
+              </Button>
             </div>
             <Nudge right={3}>
               <InteractiveIcon
@@ -140,20 +136,17 @@ export default function Header() {
         <div className={mobileNavOverlay}>
           <nav>
             <FlexList responsive variant="stretch">
-
-                  <li>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"Home"}
-                    </NavLink>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"About"}
-                    </NavLink>
-                    <NavLink to={"/#"} className={mobileNavLink}>
-                      {"Projects"}
-                    </NavLink>
-
-                    </li>
-
+              <li>
+                <NavLink to={"/#"} className={mobileNavLink}>
+                  {"Home"}
+                </NavLink>
+                <NavLink to={"/#"} className={mobileNavLink}>
+                  {"About"}
+                </NavLink>
+                <NavLink to={"/#"} className={mobileNavLink}>
+                  {"Projects"}
+                </NavLink>
+              </li>
             </FlexList>
           </nav>
         </div>

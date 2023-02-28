@@ -457,6 +457,7 @@ export const navButtonlink = style({
   transitionTimingFunction: "ease-in-out",
   ":hover": {
     color: theme.colors.active,
+
     cursor: "pointer",
   },
 })
@@ -495,10 +496,10 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
     button,
     {
       color: theme.colors.primary,
-      backgroundColor: theme.colors.black,
+      backgroundColor: theme.colors.teal,
       ":hover": {
-        backgroundColor: theme.colors.primary,
-        color: theme.colors.background,
+        backgroundColor: theme.colors.black,
+        color: theme.colors.primary,
       },
       ":focus": {
         backgroundColor: theme.colors.active,
@@ -511,40 +512,41 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
       color: theme.colors.primary,
       backgroundColor: theme.colors.background,
       ":hover": {
-        color: theme.colors.background,
-        backgroundColor: theme.colors.active,
+        color: theme.colors.black,
+        backgroundColor: theme.colors.highlight,
       },
       ":focus": {
-        color: theme.colors.background,
-        backgroundColor: theme.colors.active,
+        color: theme.colors.active,
+        backgroundColor: theme.colors.highlight,
       },
     },
   ],
   link: [
     button,
     {
-      color: "inherit",
+      color: theme.colors.background,
       backgroundColor: "transparent",
       ":hover": {
-        backgroundColor: theme.colors.muted,
+        backgroundColor: theme.colors.highlight,
+        color: theme.colors.teal,
       },
       ":focus": {
-        backgroundColor: theme.colors.muted,
+        backgroundColor: theme.colors.secondary,
       },
     },
   ],
   linkReversed: [
     button,
     {
-      color: "inherit",
-      backgroundColor: "transparent",
+      color: theme.colors.secondary,
+      backgroundColor: theme.colors.black,
       ":hover": {
-        color: theme.colors.primary,
-        backgroundColor: theme.colors.muted,
+        color: theme.colors.teal,
+        backgroundColor: theme.colors.highlight,
       },
       ":focus": {
         color: theme.colors.primary,
-        backgroundColor: theme.colors.muted,
+        backgroundColor: theme.colors.secondary,
       },
     },
   ],
@@ -554,11 +556,11 @@ export type Backgrounds = "primary" | "muted"
 
 export const backgrounds: Record<Backgrounds, string> = styleVariants({
   primary: {
-    color: theme.colors.active,
+    color: theme.colors.secondary,
     backgroundColor: theme.colors.primary,
   },
   muted: {
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     backgroundColor: theme.colors.muted,
   },
 })
