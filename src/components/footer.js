@@ -7,6 +7,8 @@ import {
   Facebook,
   Youtube,
   GitHub,
+  Linkedin,
+  Discord,
 } from "react-feather"
 import {
   Container,
@@ -20,6 +22,8 @@ import {
   VisuallyHidden,
 } from "./ui"
 import BrandLogo from "./brand-logo"
+import Logo from "../../docs/images/logo-circle-personal.png"
+import { UilDiscord } from "@iconscout/react-unicons"
 
 const socialMedia = {
   TWITTER: {
@@ -52,6 +56,16 @@ const socialMedia = {
     name: "Twitch",
     icon: <Twitch />,
   },
+  LINKEDIN: {
+    url: "https://linkedin.com",
+    name: "LinkedIn",
+    icon: <Linkedin />,
+  },
+  DISCORD: {
+    url: "https://discord.com",
+    name: "LinkedIn",
+    icon: <UilDiscord />,
+  },
 }
 
 const getSocialURL = ({ service, username }) => {
@@ -60,11 +74,11 @@ const getSocialURL = ({ service, username }) => {
   return `${domain}/${username}`
 }
 
-const getSocialIcon = ({ service }) => {
+const getSocialIcon = (service) => {
   return socialMedia[service]?.icon
 }
 
-const getSocialName = ({ service }) => {
+const getSocialName = (service) => {
   return socialMedia[service]?.name
 }
 
@@ -95,7 +109,9 @@ export default function Footer() {
     }
   `)
 
-  const { links, meta, socialLinks, copyright } = data.layout.footer
+  const { links } = data.layout.footer
+
+  const { meta, socialLinks, copyright } = data.layout.footer
 
   return (
     <Box as="footer" paddingY={4}>
@@ -103,22 +119,20 @@ export default function Footer() {
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
+            {/* <BrandLogo /> */}
+            <img style={{ width: "60px" }} src={Logo} alt="logo" />
           </NavLink>
           <Space />
           <FlexList>
             {socialLinks &&
               socialLinks.map((link) => {
-                const url = getSocialURL(link)
+                const { username, id, service } = link
+
+                console.log(service)
                 return (
-                  url && (
-                    <li key={link.id}>
-                      <IconLink to={url}>
-                        <VisuallyHidden>{getSocialName(link)}</VisuallyHidden>
-                        {getSocialIcon(link)}
-                      </IconLink>
-                    </li>
-                  )
+                  <li key={id}>
+                    <IconLink to={username}>{getSocialIcon(service)}</IconLink>
+                  </li>
                 )
               })}
           </FlexList>
@@ -135,14 +149,14 @@ export default function Footer() {
           </FlexList>
           <Space />
           <FlexList>
-            {meta &&
+            {/* {meta &&
               meta.map((link) => (
                 <li key={link.id}>
                   <NavLink to={link.href}>
                     <Text variant="small">{link.text}</Text>
                   </NavLink>
                 </li>
-              ))}
+              ))} */}
           </FlexList>
           <Text variant="small">{copyright}</Text>
         </Flex>

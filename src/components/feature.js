@@ -13,14 +13,20 @@ import {
   Techstack,
 } from "./ui"
 
+import { theme } from "../theme.css.ts"
+
 export default function Feature(props) {
   return (
     <Section padding={4} background="muted">
       <Container>
         <Flex gap={4} variant="responsive">
-          <Box width="half" order={props.flip ? 1 : null}>
+          <Box padding={5} width="half" order={props.flip ? 1 : null}>
             {props.image && (
               <GatsbyImage
+                // style={{
+                //   border: `5px solid ${theme.colors.background} `,
+                //   borderRadius: "50%",
+                // }}
                 alt={props.image.alt}
                 image={getImage(props.image.gatsbyImageData)}
               />
