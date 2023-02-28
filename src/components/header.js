@@ -20,8 +20,9 @@ import {
   mobileNavSVGColorWrapper,
 } from "./header.css"
 
-import MyLogo from "./my-logo"
 import Logo from "../../docs/images/logo-circle-personal.png"
+
+import NavItemGroup from "./nav-item-group"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -61,7 +62,7 @@ export default function Header() {
   `)
 
   const [isOpen, setOpen] = React.useState(false)
-
+  const { navItems, cta } = data.layout.header
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflowY = "hidden"
@@ -78,18 +79,29 @@ export default function Header() {
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
             {/* <MyLogo /> */}
-            <img style={{ width: "150px" }} src={Logo} alt="logo" />
+            <img style={{ width: "140px" }} src={Logo} alt="logo" />
           </NavLink>
           <nav>
             <FlexList gap={4}>
+              {/* {navItems &&
+                navItems.map((navItem) => (
+                  <li key={navItem.id}>
+                    {navItem.navItemType === "Group" ? (
+                      <NavItemGroup
+                        name={navItem.name}
+                        navItems={navItem.navItems}
+                      />
+                    ) : (
+                      <NavLink to={navItem.href}>{navItem.text}</NavLink>
+                    )}
+                  </li>
+                ))} */}
               <NavLink to={"/"}>{"Home"}</NavLink>
               <NavLink to={"/about"}>{"About"}</NavLink>
               <NavLink to={"/#projects"}>{"Projects"}</NavLink>
             </FlexList>
           </nav>
-          <div>
-            <Button to={"/"}>{"cta"}</Button>
-          </div>
+          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -108,11 +120,11 @@ export default function Header() {
           <Flex>
             <Space />
             <div>
-              {/* {cta && (
+              {cta && (
                 <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
                   {cta.text}
                 </Button>
-              )} */}
+              )}
               <Button to="/contact" variant={isOpen ? "reversed" : "primary"}>
                 {" "}
                 Contact{" "}
