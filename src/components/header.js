@@ -21,7 +21,7 @@ import {
 } from "./header.css"
 
 import MyLogo from "./my-logo"
-import Logo from "../../docs/images/my-logo-v3.png"
+import Logo from "../../docs/images/logo-circle-personal.png"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -78,7 +78,7 @@ export default function Header() {
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
             {/* <MyLogo /> */}
-            <img style={{ width: "300px" }} src={Logo} alt="logo" />
+            <img style={{ width: "150px" }} src={Logo} alt="logo" />
           </NavLink>
           <nav>
             <FlexList gap={4}>
