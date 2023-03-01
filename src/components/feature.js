@@ -20,13 +20,9 @@ export default function Feature(props) {
     <Section padding={4} background="muted">
       <Container>
         <Flex gap={4} variant="responsive">
-          <Box padding={5} width="half" order={props.flip ? 1 : null}>
+          <Box width="half" order={props.flip ? 1 : null} mobile={true}>
             {props.image && (
               <GatsbyImage
-                // style={{
-                //   border: `5px solid ${theme.colors.background} `,
-                //   borderRadius: "50%",
-                // }}
                 alt={props.image.alt}
                 image={getImage(props.image.gatsbyImageData)}
               />

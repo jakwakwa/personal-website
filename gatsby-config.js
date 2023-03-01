@@ -25,10 +25,11 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-          plugins: ["gatsby-remark-gifs"],
+        plugins: ["gatsby-remark-gifs"],
       },
-  },
-    "gatsby-plugin-sharp",
+    },
+    `gatsby-plugin-sharp`,
+
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
@@ -43,13 +44,6 @@ module.exports = {
         theme_color: "#004ca3",
         icon: "src/favicon.png",
       },
-
-
     },
-
   ],
-
-
 }
-
-

@@ -114,21 +114,18 @@ export default function Header() {
           >
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
-              {/* <BrandLogo /> */}
+              {/* <MyLogo /> */}
+              <img style={{ width: "140px" }} src={Logo} alt="logo" />
             </NavLink>
           </span>
           <Flex>
             <Space />
             <div>
-              {cta && (
+              {/* {cta && (
                 <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
                   {cta.text}
                 </Button>
-              )}
-              <Button to="/contact" variant={isOpen ? "reversed" : "primary"}>
-                {" "}
-                Contact{" "}
-              </Button>
+              )} */}
             </div>
             <Nudge right={3}>
               <InteractiveIcon

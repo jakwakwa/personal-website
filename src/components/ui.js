@@ -56,6 +56,7 @@ export function Box({
   radius,
   center = false,
   order,
+  mobile = false,
   cx: _cx = [],
   ...props
 }) {
@@ -69,6 +70,7 @@ export function Box({
         radius && styles.radii[radius],
         center && styles.box.center,
         order && styles.order[order],
+        mobile && styles.box.mobile,
         ..._cx,
       ]}
       {...props}
@@ -110,6 +112,7 @@ export function Text({
   variant = "body",
   center = false,
   bold = false,
+  mobile = false,
   ...props
 }) {
   return (
@@ -118,6 +121,7 @@ export function Text({
         styles.text[variant],
         center && styles.text.center,
         bold && styles.text.bold,
+        mobile && styles.text.mobile,
       ]}
       {...props}
     />

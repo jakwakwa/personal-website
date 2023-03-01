@@ -2,7 +2,7 @@ import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
 
-const breakpoints = ["40em", "52em", "64em"]
+const breakpoints = ["35em", "52em", "64em"]
 
 export const media = {
   small: `screen and (min-width: ${breakpoints[0]})`,
@@ -191,6 +191,38 @@ export const box = styleVariants({
     alignItems: "center",
     textAlign: "center",
   },
+  mobile: {
+    padding: "20%",
+    paddingTop: "20px",
+    paddingLeft: "0px",
+    paddingBottom: "0px",
+    alignSelf: "flex-start",
+    minWidth: "170px",
+    width: "80% ",
+    display: "block",
+    // height: "100%",
+    "@media": {
+      [media.small]: {
+        display: "flex",
+        paddingTop: "0px",
+        paddingBottom: "20px",
+        padding: "0px",
+        margin: "initial",
+        minWidth: "100px",
+        alignSelf: "flex-start",
+        height: "initial",
+      },
+
+      [media.medium]: {
+        display: "flex",
+        paddingTop: "0px",
+        padding: "60px",
+        margin: "initial",
+        // width: "50%",
+        height: "initial",
+      },
+    },
+  },
 })
 
 export const section = style({
@@ -262,6 +294,7 @@ export type TextVariants =
   | "medium"
   | "mega"
   | "center"
+  | "mobile"
   | "bold"
 
 export const text: Record<TextVariants, string> = styleVariants({
@@ -418,9 +451,7 @@ export const text: Record<TextVariants, string> = styleVariants({
       },
     },
   ],
-  center: {
-    textAlign: "center",
-  },
+
   bold: {
     fontWeight: theme.fontWeights.bold,
   },
@@ -480,7 +511,7 @@ const button = style({
   display: "inline-flex",
   textDecoration: "none",
   fontWeight: theme.fontWeights.bold,
-  fontSize: theme.fontSizes[2],
+  fontSize: theme.fontSizes[1],
   lineHeight: theme.lineHeights.solid,
   paddingTop: theme.space[3],
   paddingBottom: theme.space[3],
