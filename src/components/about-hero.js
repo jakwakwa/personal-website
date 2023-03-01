@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Container, Section, Text, SuperHeading } from "./ui"
 import * as styles from "./about-hero.css"
 
-
 export default function AboutHero(props) {
   return (
     <Section>
