@@ -19,28 +19,45 @@ export default function Feature(props) {
   return (
     <Section padding={4} background="muted">
       <Container>
-        <Flex gap={4} variant="responsive">
-          <Box width="half" order={props.flip ? 1 : null} mobile={true}>
-            {props.image && (
-              <GatsbyImage
-                alt={props.image.alt}
-                image={getImage(props.image.gatsbyImageData)}
-              />
-            )}
-          </Box>
-          <Box width="half">
-            <Subhead>
-              {props.kicker && <Kicker>{props.kicker}</Kicker>}
-              {props.heading}
-            </Subhead>
-            <Subhead>
-              {props.techstack && <Techstack>{props.techstack}</Techstack>}
-            </Subhead>
+        <div style={{ position: "relative" }}>
+          <Flex gap={4} variant="responsive">
+            <Box width="half" order={props.flip ? 1 : null} mobile={true}>
+              {props.image && (
+                <Box
+                  style={{
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "50%",
 
-            <Text variant="lead">{props.text}</Text>
-            <ButtonList links={props.links} />
-          </Box>
-        </Flex>
+                    // This is a hack to make the image fill the container
+                  }}
+                  overlay
+                >
+                  <GatsbyImage
+                    overlayColor={theme.colors.black}
+                    overflow="hidden"
+                    alt={props.image.alt}
+                    image={getImage(props.image.gatsbyImageData)}
+                    backgroundColor={theme.colors.muted}
+                  />
+                </Box>
+              )}
+            </Box>
+
+            <Box width="half">
+              <Subhead>
+                {props.kicker && <Kicker>{props.kicker}</Kicker>}
+                {props.heading}
+              </Subhead>
+              <Subhead>
+                {props.techstack && <Techstack>{props.techstack}</Techstack>}
+              </Subhead>
+
+              <Text variant="lead">{props.text}</Text>
+              <ButtonList links={props.links} />
+            </Box>
+          </Flex>
+        </div>
       </Container>
     </Section>
   )

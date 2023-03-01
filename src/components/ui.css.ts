@@ -223,6 +223,23 @@ export const box = styleVariants({
       },
     },
   },
+
+  overlay: {
+    "::after": {
+      content: "",
+      position: "absolute",
+      borderRadius: "50%",
+      top: 0,
+      left: 0,
+      width: "99%",
+      height: "99%",
+      border: `2px solid  ${theme.colors.secondary}`,
+      background: `radial-gradient(circle at 60% 40%, rgba(100, 50, 20, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
+      radial-gradient(circle at 70% 120%, rgba(0, 200, 200, 0.9) 0%, rgba(0, 0, 0, 0.1) 100%)`,
+      backgroundBlendMode: "multiply",
+      zIndex: 1,
+    },
+  },
 })
 
 export const section = style({

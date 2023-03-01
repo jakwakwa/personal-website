@@ -53,6 +53,7 @@ export function Box({
   background,
   padding,
   paddingY,
+  overlay,
   radius,
   center = false,
   order,
@@ -71,6 +72,7 @@ export function Box({
         center && styles.box.center,
         order && styles.order[order],
         mobile && styles.box.mobile,
+        overlay && styles.box.overlay,
         ..._cx,
       ]}
       {...props}
