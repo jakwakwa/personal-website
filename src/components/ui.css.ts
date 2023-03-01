@@ -293,8 +293,6 @@ export type TextVariants =
   | "small"
   | "medium"
   | "mega"
-  | "center"
-  | "mobile"
   | "bold"
 
 export const text: Record<TextVariants, string> = styleVariants({
@@ -451,7 +449,6 @@ export const text: Record<TextVariants, string> = styleVariants({
       },
     },
   ],
-
   bold: {
     fontWeight: theme.fontWeights.bold,
   },
