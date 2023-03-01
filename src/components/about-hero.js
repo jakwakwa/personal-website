@@ -7,17 +7,10 @@ import * as styles from "./about-hero.css"
 export default function AboutHero(props) {
   return (
     <Section>
-      <Container>
-        <SuperHeading className={styles.aboutHeroHeader}>
-          {props.heading}
-        </SuperHeading>
-        {props.text && (
-          <Text className={styles.aboutHeroText}>{props.text}</Text>
-        )}
-      </Container>
       <Container width="wide">
         {props.image && (
           <GatsbyImage
+            borderRadius="0%"
             alt={props.image.alt}
             image={getImage(props.image.gatsbyImageData)}
             className={styles.aboutHeroImage}
