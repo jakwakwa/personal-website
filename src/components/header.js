@@ -146,15 +146,9 @@ export default function Header() {
           <nav>
             <FlexList responsive variant="stretch">
               <li>
-                <NavLink to={"/#"} className={mobileNavLink}>
-                  {"Home"}
-                </NavLink>
-                <NavLink to={"/#"} className={mobileNavLink}>
-                  {"About"}
-                </NavLink>
-                <NavLink to={"/#"} className={mobileNavLink}>
-                  {"Projects"}
-                </NavLink>
+                <NavLink to={"/"}>{"Home"}</NavLink>
+                <NavLink to={"/about"}>{"About"}</NavLink>
+                <NavLink to={"/#projects"}>{"Projects"}</NavLink>
               </li>
             </FlexList>
           </nav>
