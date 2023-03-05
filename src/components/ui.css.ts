@@ -14,8 +14,18 @@ export const container = style({
   maxWidth: theme.sizes.container,
   marginLeft: "auto",
   marginRight: "auto",
-  paddingLeft: theme.space[4],
-  paddingRight: theme.space[4],
+  paddingLeft: theme.space[3],
+  paddingRight: theme.space[3],
+  "@media": {
+    [media.medium]: {
+      paddingLeft: theme.space[4],
+      paddingRight: theme.space[4],
+    },
+    [media.large]: {
+      paddingLeft: theme.space[5],
+      paddingRight: theme.space[5],
+    },
+  },
 })
 
 export type Containers = "normal" | "wide" | "narrow" | "tight" | "fullbleed"
@@ -45,16 +55,16 @@ export const containers: Record<Containers, string> = styleVariants({
   fullbleed: [
     container,
     {
-      paddingLeft: 0,
-      paddingRight: 0,
-      paddingTop: theme.space[4],
-      paddingBottom: theme.space[4],
+      paddingLeft: theme.space[0],
+      paddingRight: theme.space[0],
       "@media": {
         [media.medium]: {
           paddingLeft: theme.space[4],
           paddingRight: theme.space[4],
-          paddingTop: theme.space[5],
-          paddingBottom: theme.space[5],
+        },
+        [media.large]: {
+          paddingLeft: theme.space[5],
+          paddingRight: theme.space[5],
         },
       },
     },
@@ -229,11 +239,11 @@ export const box = styleVariants({
       content: "",
       position: "absolute",
       borderRadius: "50%",
-      top: 0,
-      left: 0,
-      width: "99%",
-      height: "99%",
-      border: `2px solid  ${theme.colors.secondary}`,
+      bottm: 2,
+      right: -2.5,
+      width: "100%",
+      height: "100%",
+      border: `5px solid  rgba(255, 255, 255, 0.3)`,
       background: `radial-gradient(circle at 60% 40%, rgba(100, 50, 20, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
       radial-gradient(circle at 70% 120%, rgba(0, 200, 200, 0.9) 0%, rgba(0, 0, 0, 0.1) 100%)`,
       backgroundBlendMode: "multiply",
