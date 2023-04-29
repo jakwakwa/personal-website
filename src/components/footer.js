@@ -63,7 +63,7 @@ const socialMedia = {
   },
   DISCORD: {
     url: "https://discord.com",
-    name: "LinkedIn",
+    name: "Discord",
     icon: <UilDiscord />,
   },
 }

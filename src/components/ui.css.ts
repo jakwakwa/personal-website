@@ -428,7 +428,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[2],
-      color: theme.colors.teal,
+      color: theme.colors.buttonPrimary,
       fontFamily: theme.fonts.mono,
       fontSize: theme.fontSizes[1],
       fontWeight: theme.fontWeights.medium,
@@ -551,7 +551,7 @@ const button = style({
   display: "inline-flex",
   textDecoration: "none",
   fontWeight: theme.fontWeights.bold,
-  fontSize: theme.fontSizes[1],
+  fontSize: theme.fontSizes[0],
   lineHeight: theme.lineHeights.solid,
   paddingTop: theme.space[3],
   paddingBottom: theme.space[3],
@@ -566,73 +566,75 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   primary: [
     button,
     {
-      color: theme.colors.primary,
-      backgroundColor: theme.colors.teal,
+      color: theme.colors.buttonPrimaryText,
+      backgroundColor: theme.colors.buttonPrimary,
       ":hover": {
-        backgroundColor: theme.colors.black,
-        color: theme.colors.primary,
+        backgroundColor: theme.colors.buttonPrimary_hover,
+        color: theme.colors.buttonPrimary_hoverText,
       },
       ":focus": {
-        backgroundColor: theme.colors.active,
+        backgroundColor: theme.colors.buttonActive,
       },
     },
   ],
   reversed: [
     button,
     {
-      color: theme.colors.primary,
-      backgroundColor: theme.colors.background,
+      color: theme.colors.buttonPrimaryText,
+      backgroundColor: theme.colors.buttonPrimary,
       ":hover": {
-        color: theme.colors.black,
-        backgroundColor: theme.colors.highlight,
+        backgroundColor: theme.colors.buttonPrimary_hover,
+        color: theme.colors.buttonPrimary_hoverText,
       },
       ":focus": {
         color: theme.colors.active,
-        backgroundColor: theme.colors.highlight,
+        backgroundColor: theme.colors.buttonActive,
       },
     },
   ],
   link: [
     button,
     {
-      color: theme.colors.background,
-      backgroundColor: "transparent",
+      color: theme.colors.buttonSecondaryText,
+      backgroundColor: theme.colors.buttonSecondary,
+
       ":hover": {
-        backgroundColor: theme.colors.highlight,
-        color: theme.colors.teal,
+        backgroundColor: theme.colors.buttonSecondary_hover,
+        color: theme.colors.buttonSecondaryText_hover,
       },
       ":focus": {
-        backgroundColor: theme.colors.secondary,
+        backgroundColor: theme.colors.buttonActive,
       },
     },
   ],
   linkReversed: [
     button,
     {
-      color: theme.colors.secondary,
-      backgroundColor: theme.colors.black,
+      color: theme.colors.darkButtonText,
+      backgroundColor: theme.colors.darkButton,
+
       ":hover": {
-        color: theme.colors.teal,
-        backgroundColor: theme.colors.highlight,
+        color: theme.colors.darkButtonText_hover,
+        backgroundColor: theme.colors.darkButton,
       },
       ":focus": {
         color: theme.colors.primary,
-        backgroundColor: theme.colors.secondary,
+        backgroundColor: theme.colors.buttonActive,
       },
     },
   ],
 })
 
-export type Backgrounds = "primary" | "muted"
+export type Backgrounds = "primary" | "darkBackground"
 
 export const backgrounds: Record<Backgrounds, string> = styleVariants({
   primary: {
-    color: theme.colors.secondary,
-    backgroundColor: theme.colors.primary,
+    color: theme.colors.black,
+    backgroundColor: theme.colors.background,
   },
-  muted: {
+  darkBackground: {
     color: theme.colors.secondary,
-    backgroundColor: theme.colors.muted,
+    backgroundColor: theme.colors.darkBackground,
   },
 })
 
@@ -686,7 +688,7 @@ export const iconLink = style({
     color: theme.colors.active,
   },
   ":focus": {
-    color: theme.colors.active,
+    color: theme.colors.buttonActive,
   },
 })
 

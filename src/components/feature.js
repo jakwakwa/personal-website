@@ -17,7 +17,7 @@ import { theme } from "../theme.css.ts"
 
 export default function Feature(props) {
   return (
-    <Section padding={4} background="muted">
+    <Section padding={4} background="darkBackground">
       <Container>
         <div
           style={{
@@ -44,7 +44,7 @@ export default function Feature(props) {
                     overflow="hidden"
                     alt={props.image.alt}
                     image={getImage(props.image.gatsbyImageData)}
-                    backgroundColor={theme.colors.muted}
+                    backgroundColor={theme.colors.darkBackground}
                   />
                 </Box>
               )}

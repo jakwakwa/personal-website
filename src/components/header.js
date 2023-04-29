@@ -145,20 +145,20 @@ export default function Header() {
         <div className={mobileNavOverlay}>
           <nav>
             <FlexList responsive variant="stretch">
-              <li>
-                {/* <NavLink to={"/"}>{"Home"}</NavLink>
-                <NavLink to={"/about"}>{"About"}</NavLink>
-                <NavLink to={"/#projects"}>{"Projects"}</NavLink> */}
-                <NavLink to={"/"} className={mobileNavLink}>
-                  {"Home"}
-                </NavLink>
-                <NavLink to={"/about"} className={mobileNavLink}>
-                  {"About"}
-                </NavLink>
-                <NavLink to={"/#projects"} className={mobileNavLink}>
-                  {"Projects"}
-                </NavLink>
-              </li>
+              {navItems?.map((navItem) => (
+                <li key={navItem.id}>
+                  {navItem.navItemType === "Group" ? (
+                    <NavItemGroup
+                      name={navItem.name}
+                      navItems={navItem.navItems}
+                    />
+                  ) : (
+                    <NavLink to={navItem.href} className={mobileNavLink}>
+                      {navItem.text}
+                    </NavLink>
+                  )}
+                </li>
+              ))}
             </FlexList>
           </nav>
         </div>
