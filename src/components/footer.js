@@ -128,7 +128,6 @@ export default function Footer() {
               socialLinks.map((link) => {
                 const { username, id, service } = link
 
-                console.log(service)
                 return (
                   <li key={id}>
                     <IconLink to={username}>{getSocialIcon(service)}</IconLink>

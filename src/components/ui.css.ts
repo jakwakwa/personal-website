@@ -210,6 +210,7 @@ export const box = styleVariants({
     minWidth: "170px",
     width: "80% ",
     display: "block",
+
     // height: "100%",
     "@media": {
       [media.small]: {
@@ -235,19 +236,34 @@ export const box = styleVariants({
   },
 
   overlay: {
+    opacity: 0.7,
+    width: "100%",
+    height: "auto",
+    maxWidth: "350px ",
+    margin: `0 auto`,
+
     "::after": {
       content: "",
       position: "absolute",
       borderRadius: "50%",
-      bottm: 2,
-      right: -2.5,
-      width: "100%",
-      height: "100%",
-      border: `5px solid  rgba(255, 255, 255, 0.3)`,
-      background: `radial-gradient(circle at 60% 40%, rgba(100, 50, 20, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
-      radial-gradient(circle at 70% 120%, rgba(0, 200, 200, 0.9) 0%, rgba(0, 0, 0, 0.1) 100%)`,
-      backgroundBlendMode: "multiply",
+      boxSizing: "borderBox",
+      bottom: `0px`,
+      left: `0px`,
+      width: "98.5%",
+      height: "98.5%",
+      maxWidth: "345px",
+      maxHeight: "345px",
+      outline: "12px solid rgba(0,250,240,0.3)",
+      border: "2.5px solid rgba(0,200,200,0.4)",
+      outlineOffset: `-11px`,
+      background: `rgba(0,230,230, 0.7)`,
+      background: `radial-gradient(circle at 60% 40%, rgba(10, 100, 255, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%),
+      radial-gradient(circle at 70% 120%, rgba(0, 250, 200, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%)`,
+      mixBlendMode: `lighten`,
       zIndex: 1,
+    },
+    "@media only screen and (max-width: 600px)": {
+      display: "none",
     },
   },
 })
