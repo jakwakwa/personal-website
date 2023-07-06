@@ -68,6 +68,8 @@ export default function Header() {
       document.body.style.overflowY = "hidden"
     } else {
       document.body.style.overflowY = "visible"
+
+      console.log(navItems[0])
     }
   }, [isOpen])
 
@@ -78,12 +80,12 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            {/* <MyLogo /> */}
+            {/* <Logo /> */}
             <img style={{ width: "140px" }} src={Logo} alt="logo" />
           </NavLink>
           <nav>
             <FlexList gap={4}>
-              {/* {navItems &&
+              {navItems &&
                 navItems.map((navItem) => (
                   <li key={navItem.id}>
                     {navItem.navItemType === "Group" ? (
@@ -95,13 +97,13 @@ export default function Header() {
                       <NavLink to={navItem.href}>{navItem.text}</NavLink>
                     )}
                   </li>
-                ))} */}
+                ))}
               <NavLink to={"/"}>{"Home"}</NavLink>
               <NavLink to={"/about"}>{"About"}</NavLink>
               <NavLink to={"/#projects"}>{"Projects"}</NavLink>
             </FlexList>
           </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -114,25 +116,25 @@ export default function Header() {
           >
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
-              {/* <MyLogo /> */}
+
               <img style={{ width: "140px" }} src={Logo} alt="logo" />
             </NavLink>
           </span>
           <Flex>
             <Space />
             <div>
-              {/* {cta && (
+              {cta && (
                 <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
                   {cta.text}
                 </Button>
-              )} */}
+              )}
             </div>
             <Nudge right={3}>
               <InteractiveIcon
                 title="Toggle menu"
                 onClick={() => setOpen(!isOpen)}
                 className={
-                  mobileNavSVGColorWrapper[isOpen ? "reversed" : "primary"]
+                  mobileNavSVGColorWrapper[isOpen ? "reversed" : "darkButton"]
                 }
               >
                 {isOpen ? <X /> : <Menu />}
@@ -150,12 +152,15 @@ export default function Header() {
                   {navItem.navItemType === "Group" ? (
                     <NavItemGroup
                       name={navItem.name}
-                      navItems={navItem.navItems}
+                      navItems={navItem.items}
                     />
                   ) : (
-                    <NavLink to={navItem.href} className={mobileNavLink}>
-                      {navItem.text}
-                    </NavLink>
+                    // <div>Menu:</div>
+                    <>
+                      <NavLink to={navItem.href} className={mobileNavLink}>
+                        {navItem.text}
+                      </NavLink>
+                    </>
                   )}
                 </li>
               ))}

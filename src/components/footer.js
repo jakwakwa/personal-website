@@ -63,7 +63,7 @@ const socialMedia = {
   },
   DISCORD: {
     url: "https://discord.com",
-    name: "Discord",
+    name: "LinkedIn",
     icon: <UilDiscord />,
   },
 }
@@ -119,7 +119,7 @@ export default function Footer() {
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            {/* <BrandLogo /> */}
+
             <img style={{ width: "60px" }} src={Logo} alt="logo" />
           </NavLink>
           <Space />
