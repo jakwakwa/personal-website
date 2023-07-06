@@ -98,9 +98,6 @@ export default function Header() {
                     )}
                   </li>
                 ))}
-              <NavLink to={"/"}>{"Home"}</NavLink>
-              <NavLink to={"/about"}>{"About"}</NavLink>
-              <NavLink to={"/#projects"}>{"Projects"}</NavLink>
             </FlexList>
           </nav>
           {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
@@ -119,6 +116,9 @@ export default function Header() {
 
               <img style={{ width: "140px" }} src={Logo} alt="logo" />
             </NavLink>
+            <NavLink to={"/"}>{"Home"}</NavLink>
+            <NavLink to={"/about"}>{"About"}</NavLink>
+            <NavLink to={"/#projects"}>{"Projects"}</NavLink>
           </span>
           <Flex>
             <Space />
