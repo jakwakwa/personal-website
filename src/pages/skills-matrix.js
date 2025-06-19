@@ -8,7 +8,7 @@ import ApplicationsChart from "../components/skills-matrix/components/applicatio
 import SpecializedSkills from "../components/skills-matrix/components/specialized-skills"
 import { graphql } from "gatsby"
 import { Container } from "../components/ui"
-import * as styles from "./skills-matrix.css"
+import * as styles from "../components/skills-matrix/skills-matrix.css"
 
 function SkillsMatrixPage() {
   return (
