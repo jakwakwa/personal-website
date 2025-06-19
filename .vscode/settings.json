@@ -1,7 +1,7 @@
 {
     "workbench.preferredLightColorTheme": "Field Lights",
     "workbench.preferredDarkColorTheme": "Aura Soft Dark",
-    "workbench.colorTheme": "Field Lights",
+    "workbench.colorTheme": "Night Wolf (dark gray)",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#ab307e",
         "activityBar.background": "#ab307e",
@@ -22,5 +22,9 @@
         "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "peacock.color": "#832561",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.format.enable": true,
+    "eslint.problems.shortenToSingleLine": true,
+    "eslint.run": "onSave",
 
 }

@@ -2,11 +2,11 @@ export const colors = {
   background: "#D2E8E3",
   text: "#1F3736",
   black: "#0D0D0D",
-  primary: "#D2E8E3",
+  primary: "#116964",
   darkBackground: "#1E1D25",
   secondary: "#c4f0dc",
   highlight: "#F2E5D5",
-  active: "#0D0D0D",
+  active: "#004287",
   buttonPrimary: "#D8B08C",
   buttonPrimary_hover: "#A67244",
   buttonPrimary_hoverText: "#F9B87F",
@@ -19,6 +19,11 @@ export const colors = {
   darkButtonText: "#ffffff",
   darkButtonText_hover: "#F9B87F",
   buttonActive: "#F2E5D5",
+  dark: "#1F3736",
+  "dark-teal": "#116964",
+  brown: "#A67244",
+  gold: "#D8B08C",
+  muted: "#f5fcff",
 }
 
 /* Color Theme Swatches in Hex */

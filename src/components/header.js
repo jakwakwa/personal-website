@@ -98,6 +98,9 @@ export default function Header() {
                     )}
                   </li>
                 ))}
+              <li>
+                <NavLink to="/skills-matrix">Skills Matrix</NavLink>
+              </li>
             </FlexList>
           </nav>
           {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
@@ -119,6 +122,7 @@ export default function Header() {
             <NavLink to={"/"}>{"Home"}</NavLink>
             <NavLink to={"/about"}>{"About"}</NavLink>
             <NavLink to={"/#projects"}>{"Projects"}</NavLink>
+            <NavLink to={"/skills-matrix"}>{"Skills Matrix"}</NavLink>
           </span>
           <Flex>
             <Space />

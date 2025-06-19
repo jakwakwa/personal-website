@@ -28,7 +28,7 @@ export default function NavItemGroup({ name, navItems }) {
     // crude implementation of animating the popup without a library
     const popupBox = document.querySelector(`[data-id="${name}-popup-box"]`)
     const onAnimationEnd = ({ animationName }) => {
-      if (animationName === `zoomOutDown`) {
+      if (animationName === "zoomOutDown") {
         setIsOpen(false)
       }
     }
@@ -44,7 +44,7 @@ export default function NavItemGroup({ name, navItems }) {
     // hide menu when clicked outside
     const handleClickOutside = (event) => {
       const wrapper = document.querySelector(
-        `[data-id="${name}-group-wrapper"]`
+        `[data-id="${name}-group-wrapper"]`,
       )
       if (
         !isSmallScreen() &&

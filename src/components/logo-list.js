@@ -27,7 +27,7 @@ export default function LogoList(props) {
                 <li key={logo.id}>
                   <LogoItem {...logo} />
                 </li>
-              )
+              ),
           )}
         </FlexList>
       </Container>

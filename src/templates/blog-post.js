@@ -27,7 +27,7 @@ export default function BlogPost(props) {
             <Box center>
               <Flex>
                 {props.author.avatar &&
-                  (!!props.author.avatar.gatsbyImageData ? (
+                  (props.author.avatar.gatsbyImageData ? (
                     <Avatar
                       {...props.author.avatar}
                       image={props.author.avatar.gatsbyImageData}
