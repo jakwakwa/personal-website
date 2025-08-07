@@ -28,5 +28,6 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "terminal.integrated.lineHeight": 1.2,
 
 }
